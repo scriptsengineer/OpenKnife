@@ -17,4 +17,4 @@ MonoBehaviour:
   initialSpeed: 128
   angleObjects:
   - angle: 119
-    objectType: 0
+    objectType: 1

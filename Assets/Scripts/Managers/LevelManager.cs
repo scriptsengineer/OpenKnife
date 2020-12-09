@@ -61,7 +61,12 @@ public class LevelManager : MonoBehaviour,GameStates
         foreach(AngleObject ao in stage.angleObjects)
         {
             GameObject prefab = ao.objectType == ObjectType.Knife ? knifePrefab : applePrefab;
-            GameObject go = Instantiate(prefab,wood.transform);
+            GameObject go = Instantiate(prefab,
+                wood.transform.position,
+                Quaternion.identity,
+                wood.transform);
+                // TODO diminuir do tamanho do objeto.
+            go.transform.position+=Vector3.up*0.6f;
             objectsInWood.Add(go);
         }
 
@@ -98,8 +103,6 @@ public class LevelManager : MonoBehaviour,GameStates
         mover.speed = 0;
         Knife knife = go.GetComponent<Knife>();
         knife.isPlayer = true;
-        Collider2D col = go.GetComponent<Collider2D>();
-        col.tag = "Player";
 
         objectsInWood.Add(go);
 
@@ -132,6 +135,14 @@ public class LevelManager : MonoBehaviour,GameStates
     public void Next()
     {
         actualLevel++;
-        Setting(stages[actualLevel]);
+        if(stages.Length <= actualLevel)
+        {
+            GameManager.instance.GameOver();
+        }
+        else
+        {
+            Setting(stages[actualLevel]);
+        }
+        
     }
 }
