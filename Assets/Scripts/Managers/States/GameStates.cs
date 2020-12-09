@@ -1,6 +1,6 @@
 public interface GameStates
 {
-    void MainMenu();
-    void StartGame();
-    void GameOver();
+    void MainMenu(GameState newState,GameState oldState);
+    void StartGame(GameState newState,GameState oldState);
+    void GameOver(GameState newState,GameState oldState);
 }

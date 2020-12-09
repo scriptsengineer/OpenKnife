@@ -1,3 +1,4 @@
+[System.Serializable]
 public enum GameState
 {
     MAIN_MENU,

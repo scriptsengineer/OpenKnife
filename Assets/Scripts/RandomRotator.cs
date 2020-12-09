@@ -1,21 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Rotator))]
 public class RandomRotator : MonoBehaviour
 {
+    private Rotator rotator;
 
-    public float speed;
-
-    // Start is called before the first frame update
-    void Start()
+    public float timeToChange = 1f;
+    public float nextSpeed = 1f;
+    private float actualTimer = 0f;
+    
+    private void Awake()
     {
-        
+        rotator = GetComponent<Rotator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        gameObject.transform.Rotate(0,speed,0);
+        //actualTimer+
     }
+
+    // public IEnumerator TimeToChangeSpeed()
+    // {
+    //     yield return new WaitForSeconds()
+    // } 
 }
