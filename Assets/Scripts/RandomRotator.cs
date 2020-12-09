@@ -8,7 +8,7 @@ public class RandomRotator : MonoBehaviour
 
     public float timeToChange = 1f;
     public float nextSpeed = 1f;
-    private float actualTimer = 0f;
+    //private float actualTimer = 0f;
     
     private void Awake()
     {

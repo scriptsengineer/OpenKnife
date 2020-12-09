@@ -7,15 +7,25 @@ public class Shooter : MonoBehaviour
     [HideInInspector]
     public LevelManager levelManager;
 
+    public Mover mover;
+
+    [Range(4f,16f)]
+    public float speedShooter = 8f;
+
     private void Update()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButtonDown(0))
         {
             shoots--;
-            if(shoots <= 0)
+            if(shoots >= 0)
             {
-                enabled = false;
+                mover.speed = speedShooter;
+            }else
+            {
+                //enabled = false;
             }
+            enabled = false;
+            
         }
     }
 }

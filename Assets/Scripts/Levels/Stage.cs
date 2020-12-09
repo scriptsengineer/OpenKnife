@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Level", menuName = "OpenKnife/Level")]
-public class Level : ScriptableObject
+[CreateAssetMenu(fileName = "New Stage", menuName = "OpenKnife/Stage")]
+public class Stage : ScriptableObject
 {
     [Range(2,12)]
     public int shoots = 7;

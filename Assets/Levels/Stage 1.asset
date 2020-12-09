@@ -9,18 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d02ee1190fbb4449a60931ed977bd6a, type: 3}
-  m_Name: Level 1
+  m_Script: {fileID: 11500000, guid: 40a5796d1baa77246ba5de086b53fbdf, type: 3}
+  m_Name: Stage 1
   m_EditorClassIdentifier: 
-  lifes: 7
+  shoots: 2
   boss: 0
-  initialSpeed: 1
+  initialSpeed: 32
   angleObjects:
   - angle: 119
-    objectType: 0
-  - angle: 0
-    objectType: 0
-  - angle: 0
-    objectType: 0
-  - angle: 0
     objectType: 0

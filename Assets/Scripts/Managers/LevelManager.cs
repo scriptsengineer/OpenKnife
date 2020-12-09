@@ -1,23 +1,28 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour,GameStates
 {
-    public Level[] levels;
+    #region Public variables
+    [Header("Levels")]
+    public Stage[] stages;
 
+    [Header("Prefabs")]
     public GameObject applePrefab;
     public GameObject knifePrefab;
 
-    private List<GameObject> objectsInWood;
-
+    [Header("References")]
     public GameObject player;
     public GameObject wood;
-
     public Transform spawnShooter;
+    #endregion
 
+    private List<GameObject> objectsInWood = new List<GameObject>();
     private Rotator rotator;
     private Shooter shooter;
-
+    //private Mover knifeToShoot;
     private int actualLevel = -1;
 
     private void Awake()
@@ -46,54 +51,87 @@ public class LevelManager : MonoBehaviour,GameStates
     // Spawn objects in the wood
     // Set levels speed
     // Set shoots
-    public void Setting(Level level)
+    public void Setting(Stage stage)
     {
-        rotator.speed = level.initialSpeed;
-        shooter.shoots = level.shoots;
+        rotator.speed = stage.initialSpeed;
+        shooter.shoots = stage.shoots;
 
-        if(level.angleObjects.Count <=0) return;
+        if(stage.angleObjects.Count <=0) return;
 
-        foreach(AngleObject ao in level.angleObjects)
+        foreach(AngleObject ao in stage.angleObjects)
         {
             GameObject prefab = ao.objectType == ObjectType.Knife ? knifePrefab : applePrefab;
-            Instantiate(prefab,wood.transform);
+            GameObject go = Instantiate(prefab,wood.transform);
+            objectsInWood.Add(go);
         }
 
-        StartLevel();
+        StartCoroutine(StartLevel());
 
     }
 
-    public void StartLevel()
+    public IEnumerator StartLevel()
     {
-        shooter.enabled = true;
-        PrepareNextShoot(spawnShooter);
+        yield return new WaitForSeconds(1f);
+        RequestNewShoot();
+    }
+
+    
+    public void RequestNewShoot()
+    {
+        if(shooter.shoots > 0)
+        {
+            PrepareNextShoot();
+        }
+        else
+        {
+            Clear();
+            Next();
+        }
     }
 
     // Prepare for next shooter
-    public void PrepareNextShoot(Transform spawner)
+    public void PrepareNextShoot()
     {
-        GameObject go = Instantiate(knifePrefab,spawner.position,spawner.rotation);
+
+        GameObject go = Instantiate(knifePrefab,spawnShooter.position,spawnShooter.rotation);
+        Mover mover = go.AddComponent<Mover>();
+        mover.speed = 0;
+        Knife knife = go.GetComponent<Knife>();
+        knife.isPlayer = true;
+        Collider2D col = go.GetComponent<Collider2D>();
+        col.tag = "Player";
+
+        objectsInWood.Add(go);
+
+        shooter.mover = mover;
+        
+        shooter.enabled = true;
     }
 
+    #region Game States events
     public void MainMenu(GameState newState, GameState oldState)
     {
-        
+        if(oldState == GameState.IN_GAME)
+        {
+            Clear();
+        }
     }
 
     public void StartGame(GameState newState, GameState oldState)
     {
         actualLevel = -1;
-        NextLevel();
+        Next();
     }
 
     public void GameOver(GameState newState, GameState oldState)
     {
-        
+        Clear();
     }
+    #endregion
 
-    public void NextLevel()
+    public void Next()
     {
         actualLevel++;
-        Setting(levels[actualLevel]);
+        Setting(stages[actualLevel]);
     }
 }
