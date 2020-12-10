@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ namespace OpenKnife.UI
     public class ShootsPanel : MonoBehaviour
     {
         public Image shootUIPrefab;
+        public float secondsInSpawnAnimation = 0.25f;
 
         private List<Image> images = new List<Image>();
 
@@ -38,11 +40,11 @@ namespace OpenKnife.UI
 
         public void Shoot()
         {
-            actualShoots--;
             if(actualShoots <= 0) return;
-            images[shoots-actualShoots-1].color = Color.black;
+            actualShoots--;
+            images[shoots-actualShoots-1].GetComponent<Animator>().SetTrigger("Used");
         }
-
+        
         private void Clear()
         {
             // REVIEW Use a pool system
