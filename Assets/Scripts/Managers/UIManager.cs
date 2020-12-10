@@ -1,57 +1,67 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour, GameStates
+namespace OpenKnife.Managers
 {
-
-    public GameObject mainMenuPanel;
-    public GameObject inGamePanel;
-    public GameObject gameOverPanel;
-
-    [Header("References")]
-    public Text stageText;
-
-    public Text scoreText;
-
-    private void Start()
+    public class UIManager : MonoBehaviour, GameStates
     {
-        GameManager.instance.gameStates.Add(this);
-    }
 
-    private void OnDisable()
-    {
-        GameManager.instance.gameStates.Remove(this);
-    }
+        public GameObject mainMenuPanel;
+        public GameObject inGamePanel;
+        public GameObject gameOverPanel;
 
-    public void GameOver(GameState newState,GameState oldState)
-    {
-        mainMenuPanel.SetActive(false);
-        inGamePanel.SetActive(false);
-        gameOverPanel.SetActive(true);
-    }
+        [Header("References")]
+        public Text stageText;
+        public Text fruitsText;
+        public Text scoreText;
 
-    public void MainMenu(GameState newState,GameState oldState)
-    {
-        mainMenuPanel.SetActive(true);
-        inGamePanel.SetActive(false);
-        gameOverPanel.SetActive(false);
-    }
+        private void Start()
+        {
+            GameManager.instance.gameStates.Add(this);
+        }
 
-    public void StartGame(GameState newState,GameState oldState)
-    {
-        mainMenuPanel.SetActive(false);
-        inGamePanel.SetActive(true);
-        gameOverPanel.SetActive(false);
-    }
+        private void OnDisable()
+        {
+            GameManager.instance.gameStates.Remove(this);
+        }
+
+        public void UpdateFruits(int fruits)
+        {
+            stageText.text = fruits.ToString();
+        }
+
+        public void GameOver(GameState newState, GameState oldState)
+        {
+            mainMenuPanel.SetActive(false);
+            inGamePanel.SetActive(false);
+            gameOverPanel.SetActive(true);
+        }
+
+        public void MainMenu(GameState newState, GameState oldState)
+        {
+            mainMenuPanel.SetActive(true);
+            inGamePanel.SetActive(false);
+            gameOverPanel.SetActive(false);
+        }
+
+        public void StartGame(GameState newState, GameState oldState)
+        {
+            mainMenuPanel.SetActive(false);
+            inGamePanel.SetActive(true);
+            gameOverPanel.SetActive(false);
+        }
 
 
-    public void UpdateStageText(int stage)
-    {
-        stageText.text = (stage+1).ToString();
-    }
+        public void UpdateStageText(int stage)
+        {
+            stageText.text = (stage + 1).ToString();
+        }
 
-    public void UpdateScoreText(int value)
-    {
-        scoreText.text = value.ToString();
+        public void UpdateScoreText(int value)
+        {
+            scoreText.text = value.ToString();
+        }
     }
 }
+

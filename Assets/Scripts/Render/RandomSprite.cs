@@ -1,24 +1,24 @@
 using UnityEngine;
 
-namespace Render
+namespace OpenKnife.Render
 {
-    [RequireComponent(typeof(SpriteRenderer))]
-    public class RandomSprite : MonoBehaviour
+    namespace Render
     {
-        private SpriteRenderer spriteRenderer;
-
-        public Sprite[] sprites;
-
-        private void Awake()
+        [RequireComponent(typeof(SpriteRenderer))]
+        public class RandomSprite : MonoBehaviour
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            if(sprites.Length > 0)
-            {
-                spriteRenderer.sprite = sprites[Random.Range(0,sprites.Length)];
-            }
-            
-        }
+            private SpriteRenderer spriteRenderer;
+            public Sprite[] sprites;
 
+            private void Awake()
+            {
+                spriteRenderer = GetComponent<SpriteRenderer>();
+                if (sprites.Length > 0)
+                {
+                    spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
+                }
+            }
+        }
     }
 }
 

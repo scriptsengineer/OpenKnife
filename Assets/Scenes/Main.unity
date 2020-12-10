@@ -519,6 +519,7 @@ MonoBehaviour:
   inGamePanel: {fileID: 1054862674}
   gameOverPanel: {fileID: 1578136681}
   stageText: {fileID: 594339823}
+  fruitsText: {fileID: 0}
   scoreText: {fileID: 2138747839}
 --- !u!1 &594339821
 GameObject:
@@ -653,6 +654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1248504424}
   - component: {fileID: 1248504425}
+  - component: {fileID: 1248504426}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -689,7 +691,19 @@ MonoBehaviour:
   shoots: 0
   levelManager: {fileID: 0}
   mover: {fileID: 0}
-  speedShooter: 32
+  speedShooter: 256
+--- !u!114 &1248504426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248504423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f60db334fdf5545af83525c395ef96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1270277236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1228,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.764151, g: 0.54782635, b: 0.2559185, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1309,6 +1323,7 @@ GameObject:
   - component: {fileID: 1867632155}
   - component: {fileID: 1867632156}
   - component: {fileID: 1867632157}
+  - component: {fileID: 1867632158}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1342,6 +1357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0db28ef05bcf3f4f9a187b069083047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uIManager: {fileID: 530139050}
   onStartGame:
     m_PersistentCalls:
       m_Calls: []
@@ -1351,7 +1367,6 @@ MonoBehaviour:
   onMainMenu:
     m_PersistentCalls:
       m_Calls: []
-  uIManager: {fileID: 530139050}
 --- !u!114 &1867632157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1375,15 +1390,145 @@ MonoBehaviour:
     type: 3}
   knifePrefab: {fileID: 7305310117627508217, guid: b7a5933300551db4bb2448b8828c4fed,
     type: 3}
+  woodParticle: {fileID: 2665583098392238248, guid: 8a51fbfe16e485e44b6a36e24610b25c,
+    type: 3}
+  fruitsParticle: {fileID: 2665583098392238248, guid: 0ef06a8fd1207b042b3fd9754559c587,
+    type: 3}
   player: {fileID: 1248504423}
   wood: {fileID: 1725963183}
   spawnShooter: {fileID: 1484039881}
   onKnifeHitOnWood:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1867632158}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onKnifeHitOnKnife:
     m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1867632158}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 724131bc8a7f34041bb9f1701f0cb58d,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onScore:
+    m_PersistentCalls:
       m_Calls: []
+  onFruitSlice:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!82 &1867632158
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867632154}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1985169515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,6 +1854,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: bb9d03ce593855d4fa0e109b335b10d5,
         type: 3}
+    - target: {fileID: 4211526475553293578, guid: 66a1eabf7705e6f48a942d158e830853,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211526475553293578, guid: 66a1eabf7705e6f48a942d158e830853,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4211526476807759078, guid: 66a1eabf7705e6f48a942d158e830853,
         type: 3}
       propertyPath: m_Name

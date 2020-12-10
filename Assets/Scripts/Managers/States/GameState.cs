@@ -1,7 +1,11 @@
-[System.Serializable]
-public enum GameState
+namespace OpenKnife.Managers
 {
-    MAIN_MENU,
-    IN_GAME,
-    GAME_OVER
+    [System.Serializable]
+    public enum GameState
+    {
+        MAIN_MENU,
+        IN_GAME,
+        GAME_OVER
+    }
 }
+

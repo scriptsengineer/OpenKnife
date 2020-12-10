@@ -1,12 +1,14 @@
 using UnityEngine;
 
-public class Mover : MonoBehaviour
-{
+// namespace 
 
-    public float speed = 1f;
+// public class Mover : MonoBehaviour
+// {
 
-    private void Update()
-    {
-        transform.position += Vector3.up * (speed * Time.deltaTime);
-    }
-}
+//     public float speed = 1f;
+
+//     private void Update()
+//     {
+//         transform.position += Vector3.up * (speed * Time.deltaTime);
+//     }
+// }

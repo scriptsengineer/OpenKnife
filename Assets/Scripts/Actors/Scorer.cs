@@ -1,13 +1,27 @@
+using OpenKnife.Managers;
 using UnityEngine;
 
-public class Scorer : MonoBehaviour
+namespace OpenKnife.Gameplay
 {
-    private int score = 0;
-
-    public void AddScore(int value)
+    public class Scorer : MonoBehaviour
     {
-        if(value < 0) return;
-        score += value;
-        GameManager.instance.uIManager.UpdateScoreText(score);
+        private int score = 0;
+        private int fruits = 0;
+
+        public int Score => score;
+        public int Fruits => fruits;
+
+        public void AddScore(int value)
+        {
+            if (value < 0) return;
+            score += value;
+        }
+
+        public void AddFruits(int value)
+        {
+            if (value < 0) return;
+            fruits += value;
+        }
     }
 }
+

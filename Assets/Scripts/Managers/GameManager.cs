@@ -2,107 +2,113 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameManager : MonoBehaviour
+namespace OpenKnife.Managers
 {
-    // TODO salvar old state e enviar por eventos
-    private GameState state;
-    private GameState oldState;
-
-    public UnityEvent onStartGame;
-    public UnityEvent onGameOver;
-    public UnityEvent onMainMenu;
-
-    public static GameManager instance;
-
-    public UIManager uIManager;
-
-    [Header("Definir classes que tem gamestates chamados automaticamente quando modificado pelo gameManager")]
-    public List<GameStates> gameStates = new List<GameStates>();
-
-    public GameState State => state;
-
-    private void Awake()
+    public class GameManager : MonoBehaviour
     {
-        if (instance != null)
+        public static GameManager instance;
+        private GameState state;
+        private GameState oldState;
+
+        [Header("References")]
+        public UIManager uIManager;
+
+        [Header("Events")]
+        public UnityEvent onStartGame;
+        public UnityEvent onGameOver;
+        public UnityEvent onMainMenu;
+
+        [Header("Definir classes que tem gamestates chamados automaticamente quando modificado pelo gameManager")]
+        public List<GameStates> gameStates = new List<GameStates>();
+        public GameState State => state;
+
+        private void Awake()
         {
-            Destroy(this);
+            if (instance != null)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                instance = this;
+            }
+
+            GameStates[] internStates = GetComponents<GameStates>();
+            gameStates.AddRange(internStates);
         }
-        else
+
+        private void Start()
         {
-            instance = this;
+            onChangeState();
         }
 
-        GameStates[] internStates = GetComponents<GameStates>();
-        gameStates.AddRange(internStates);
-    }
-
-    private void Start()
-    {
-        onChangeState();
-    }
-
-    public void ChangeState(GameState newState)
-    {
-        oldState = state;
-        state = newState;
-        onChangeState();
-    }
-
-    public void onChangeState()
-    {
-        switch (state)
+        public void ChangeState(GameState newState)
         {
-            case GameState.MAIN_MENU:
-                OnMainMenu(state, oldState);
-                break;
-            case GameState.IN_GAME:
-                OnStartGame(state, oldState);
-                break;
-            case GameState.GAME_OVER:
-                OnGameOver(state, oldState);
-                break;
+            oldState = state;
+            state = newState;
+            onChangeState();
         }
-    }
 
-    public void StartGame()
-    {
-        ChangeState(GameState.IN_GAME);
-    }
-
-    public void MainMenu()
-    {
-        ChangeState(GameState.MAIN_MENU);
-    }
-
-    public void GameOver()
-    {
-        ChangeState(GameState.GAME_OVER);
-    }
-
-    public void OnGameOver(GameState newGameState, GameState oldGameState)
-    {
-        onGameOver.Invoke();
-        foreach (GameStates state in gameStates)
+        public void onChangeState()
         {
-            state.GameOver(newGameState, oldGameState);
+            switch (state)
+            {
+                case GameState.MAIN_MENU:
+                    OnMainMenu(state, oldState);
+                    break;
+                case GameState.IN_GAME:
+                    OnStartGame(state, oldState);
+                    break;
+                case GameState.GAME_OVER:
+                    OnGameOver(state, oldState);
+                    break;
+            }
         }
-    }
 
-    public void OnMainMenu(GameState newGameState, GameState oldGameState)
-    {
-        onMainMenu.Invoke();
-        foreach (GameStates state in gameStates)
+        #region Events
+        public void StartGame()
         {
-            state.MainMenu(newGameState, oldGameState);
+            ChangeState(GameState.IN_GAME);
         }
-    }
 
-    public void OnStartGame(GameState newGameState, GameState oldGameState)
-    {
-        onStartGame.Invoke();
-        foreach (GameStates state in gameStates)
+        public void MainMenu()
         {
-            state.StartGame(newGameState, oldGameState);
+            ChangeState(GameState.MAIN_MENU);
         }
+
+        public void GameOver()
+        {
+            ChangeState(GameState.GAME_OVER);
+        }
+        #endregion
+
+        #region Callback Events
+        public void OnGameOver(GameState newGameState, GameState oldGameState)
+        {
+            onGameOver.Invoke();
+            foreach (GameStates state in gameStates)
+            {
+                state.GameOver(newGameState, oldGameState);
+            }
+        }
+
+        public void OnMainMenu(GameState newGameState, GameState oldGameState)
+        {
+            onMainMenu.Invoke();
+            foreach (GameStates state in gameStates)
+            {
+                state.MainMenu(newGameState, oldGameState);
+            }
+        }
+
+        public void OnStartGame(GameState newGameState, GameState oldGameState)
+        {
+            onStartGame.Invoke();
+            foreach (GameStates state in gameStates)
+            {
+                state.StartGame(newGameState, oldGameState);
+            }
+        }
+        #endregion
     }
 }

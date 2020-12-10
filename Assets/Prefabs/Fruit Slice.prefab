@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2665583098392238254}
   - component: {fileID: 2665583098392238255}
   m_Layer: 0
-  m_Name: Wood Particle
+  m_Name: Fruit Slice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,8 +221,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.47450984, g: 0.2509804, b: 0, a: 1}
-      maxColor: {r: 0.76470596, g: 0.4431373, b: 0, a: 1}
+      minColor: {r: 0, g: 0.16732645, b: 1, a: 1}
+      maxColor: {r: 1, g: 0, b: 0.09759998, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -660,7 +660,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 60
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -975,7 +975,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 8
+        scalar: 16
         minScalar: 30
         maxCurve:
           serializedVersion: 2
