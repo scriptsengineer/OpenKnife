@@ -1,7 +1,7 @@
 # OpenKnife
 
 # Bem-vindo ao Open Knife 👋
-![Version](https://img.shields.io/badge/version-0.9.1-blue.svg?cacheSeconds=2592000)
+![Version](https://img.shields.io/badge/version-0.2.2-blue.svg?cacheSeconds=2592000)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](todo-doc)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](MIT)
 [![Twitter: ScriptsEngineer](https://img.shields.io/twitter/follow/ScriptsEngineer.svg?style=social)](https://twitter.com/ScriptsEngineer)
