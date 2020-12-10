@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a5796d1baa77246ba5de086b53fbdf, type: 3}
   m_Name: Stage 1
   m_EditorClassIdentifier: 
-  shoots: 2
+  shoots: 5
   boss: 0
-  initialSpeed: 32
+  initialSpeed: 160
   angleObjects:
-  - angle: 120
+  - angle: 0
     objectType: 1
   - angle: 30
     objectType: 1
-  - angle: 60
+  - angle: 120
     objectType: 0
+  - angle: 260
+    objectType: 1

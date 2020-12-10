@@ -9,8 +9,8 @@ public class Shooter : MonoBehaviour
 
     public Mover mover;
 
-    [Range(4f,16f)]
-    public float speedShooter = 24f;
+    [Range(16f,64f)]
+    public float speedShooter = 32f;
 
     private void Update()
     {

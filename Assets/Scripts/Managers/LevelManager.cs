@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour,GameStates
     [Header("Prefabs")]
     public GameObject applePrefab;
     public GameObject knifePrefab;
+    public GameObject woodParticle;
 
     [Header("References")]
     public GameObject player;
@@ -38,6 +39,8 @@ public class LevelManager : MonoBehaviour,GameStates
         onKnifeHitOnWood.AddListener(delegate
         {
             RequestNewShoot();
+            GameObject go = Instantiate(woodParticle,Vector3.down*1.5f,Quaternion.identity);
+            Destroy(go,1f);
         });
     }
 

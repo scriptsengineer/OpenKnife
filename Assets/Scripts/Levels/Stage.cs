@@ -9,12 +9,14 @@ public class Stage : ScriptableObject
     public bool boss = false;
     public float initialSpeed = 1f;
     
+    [Header("Speeds in times")]
     public List<SpeedTimer> speedTimers;
 
     [Header("Objects in Level")]
     public List<AngleObject> angleObjects;
 }
 
+[System.Serializable]
 public struct SpeedTimer
 {
     public float speed;

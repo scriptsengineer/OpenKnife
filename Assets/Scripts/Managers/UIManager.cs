@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour, GameStates
     [Header("References")]
     public Text stageText;
 
+    public Text scoreText;
+
     private void Start()
     {
         GameManager.instance.gameStates.Add(this);
@@ -45,6 +47,11 @@ public class UIManager : MonoBehaviour, GameStates
 
     public void UpdateStageText(int stage)
     {
-        stageText.text = "STAGE "+stage;
+        stageText.text = (stage+1).ToString();
+    }
+
+    public void UpdateScoreText(int value)
+    {
+        scoreText.text = value.ToString();
     }
 }
