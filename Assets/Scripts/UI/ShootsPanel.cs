@@ -13,25 +13,42 @@ namespace OpenKnife.UI
         private int shoots;
         private int actualShoots;
 
-        public void Setting(int shoots)
+        private RectTransform rect;
+
+        private void Awake()
+        {
+            rect = GetComponent<RectTransform>();
+        }
+
+        public void SetNewShoots(int shoots)
+        {
+            Clear();
+            Setting(shoots);
+        }
+
+        private void Setting(int shoots)
         {
             this.shoots = shoots;
             this.actualShoots = shoots;
             for (int i = 0; i < shoots; i++)
             {
-                images.Add(Instantiate(shootUIPrefab,transform.parent));
+                images.Add(Instantiate(shootUIPrefab,rect));
             }
         }
 
         public void Shoot()
         {
             actualShoots--;
-            images[actualShoots].color = Color.black;
+            if(actualShoots <= 0) return;
+            images[shoots-actualShoots-1].color = Color.black;
         }
 
-        public void Clear()
+        private void Clear()
         {
-            //TODO Use a pool system
+            // REVIEW Use a pool system
+            foreach (Transform child in transform)
+                Destroy(child.gameObject);
+            images.Clear();
         }
     }    
 }

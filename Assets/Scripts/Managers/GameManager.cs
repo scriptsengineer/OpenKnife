@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using OpenKnife.UI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,7 +12,7 @@ namespace OpenKnife.Managers
         private GameState oldState;
 
         [Header("References")]
-        public UIManager uIManager;
+        public UIManager UI;
 
         [Header("Events")]
         public UnityEvent onStartGame;

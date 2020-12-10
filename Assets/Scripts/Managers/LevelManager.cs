@@ -126,11 +126,11 @@ namespace OpenKnife.Managers
                 Destroy(go, 1f);
 
                 scorer.AddFruits(1);
-                GameManager.instance.uIManager.UpdateFruits(scorer.Fruits);
+                GameManager.instance.UI.UpdateFruits(scorer.Fruits);
             });
             onScore.AddListener(delegate
             {
-                GameManager.instance.uIManager.UpdateScoreText(scorer.Score);
+                GameManager.instance.UI.UpdateScoreText(scorer.Score);
             });
         }
 
@@ -160,7 +160,7 @@ namespace OpenKnife.Managers
         // Loads next shot, checking that no more shots passes to next stage
         private void RequestNewShoot()
         {
-            if (shooter.shoots > 0)
+            if (shooter.Shoots > 0)
             {
                 PrepareNextShoot();
             }
@@ -175,7 +175,7 @@ namespace OpenKnife.Managers
         private void Next()
         {
             actualLevel++;
-            GameManager.instance.uIManager.UpdateStageText(actualLevel);
+            GameManager.instance.UI.UpdateStageText(actualLevel);
             if (stages.Length <= actualLevel)
             {
                 GameManager.instance.GameOver();
@@ -194,7 +194,7 @@ namespace OpenKnife.Managers
         private void Setting(Stage stage)
         {
             rotator.Setting(stage.speedMultiplier,stage.speedCurves,stage.timerResetSpeedCurves);
-            shooter.shoots = stage.shoots;
+            shooter.SetNewShoots(stage.shoots);
 
             if (stage.angleObjects.Count <= 0) return;
 

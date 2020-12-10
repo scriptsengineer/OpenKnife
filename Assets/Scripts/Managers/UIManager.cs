@@ -1,8 +1,9 @@
 using System;
+using OpenKnife.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace OpenKnife.Managers
+namespace OpenKnife.UI
 {
     public class UIManager : MonoBehaviour, GameStates
     {
@@ -15,6 +16,7 @@ namespace OpenKnife.Managers
         public Text stageText;
         public Text fruitsText;
         public Text scoreText;
+        public ShootsPanel shootsPanel;
 
         private void Start()
         {
