@@ -26,7 +26,7 @@ Foi criado certos gerenciadores para utilizar lógica e dados de forma fácil e 
 
 🚨 _LevelManager_: Responsável obviamente pelos estágios e seus carregamentos.
 
-🚨 UIManager: Além de ser pai de toda interface do usuário, armazena o _Canvas_ também.
+🚨 _UIManager_: Além de ser pai de toda interface do usuário, armazena o _Canvas_ também.
 
 
 ## Atores
@@ -58,7 +58,7 @@ Um dos maiores problemas vistos nessa produção foi a dúvida que se deveria us
 
 ### Aonde o estágio ❓
 
-Para um designer é muito fácil apenas editar um arquivo, desde o ínicio foi planejado uso de  [_ScriptableObject_](https://docs.unity3d.com/Manual/class-ScriptableObject.html).
+Para um designer é muito fácil apenas editar um arquivo, desta forma foi utilizado o [_ScriptableObject_](https://docs.unity3d.com/Manual/class-ScriptableObject.html).
 
 ![Physic problem](https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Code_rDrUJHE2CC.png)
 
@@ -91,13 +91,13 @@ Dê uma ⭐️ se este projeto te ajudou!
 
 ## Assets utilizados
 
-🎨 ![FREE Casual Game SFX Pack](https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116)
+🎨 [FREE Casual Game SFX Pack](https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116)
 
-🎨 ![20 Evolving Fantasy RPG Weapons](https://assetstore.unity.com/packages/2d/textures-materials/20-evolving-fantasy-rpg-weapons-61204)
+🎨 [20 Evolving Fantasy RPG Weapons](https://assetstore.unity.com/packages/2d/textures-materials/20-evolving-fantasy-rpg-weapons-61204)
 
-🎨 ![Free Pixel Font - Thaleah](https://assetstore.unity.com/packages/2d/fonts/free-pixel-font-thaleah-140059)
+🎨 [Free Pixel Font - Thaleah](https://assetstore.unity.com/packages/2d/fonts/free-pixel-font-thaleah-140059)
 
-🎨 ![Free Pixel Food](https://assetstore.unity.com/packages/2d/environments/free-pixel-food-113523)
+🎨 [Free Pixel Food](https://assetstore.unity.com/packages/2d/environments/free-pixel-food-113523)
 
 
 ## 📝 Licença
