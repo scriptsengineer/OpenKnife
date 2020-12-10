@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelManager : MonoBehaviour,GameStates
 {
@@ -24,6 +25,28 @@ public class LevelManager : MonoBehaviour,GameStates
     private Shooter shooter;
     //private Mover knifeToShoot;
     private int actualLevel = -1;
+
+
+    public UnityEvent onKnifeHitOnWood;
+    public UnityEvent onKnifeHitOnKnife;
+
+    private void Start()
+    {
+        onKnifeHitOnKnife.AddListener(delegate
+        {
+            StartCoroutine(StartGameOver());
+        });
+        onKnifeHitOnWood.AddListener(delegate
+        {
+            RequestNewShoot();
+        });
+    }
+
+    public IEnumerator StartGameOver()
+    {
+        yield return new WaitForSeconds(1f);
+        GameManager.instance.GameOver();
+    }
 
     private void Awake()
     {
@@ -66,7 +89,7 @@ public class LevelManager : MonoBehaviour,GameStates
                 Quaternion.identity,
                 wood.transform);
                 // TODO diminuir do tamanho do objeto.
-            go.transform.position+=Vector3.up*0.6f;
+            go.transform.position+=Vector3.up*2.4f;
             objectsInWood.Add(go);
         }
 
@@ -135,6 +158,7 @@ public class LevelManager : MonoBehaviour,GameStates
     public void Next()
     {
         actualLevel++;
+        GameManager.instance.uIManager.UpdateStageText(actualLevel);
         if(stages.Length <= actualLevel)
         {
             GameManager.instance.GameOver();

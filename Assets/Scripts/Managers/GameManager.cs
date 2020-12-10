@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    public UIManager uIManager;
+
     [Header("Definir classes que tem gamestates chamados automaticamente quando modificado pelo gameManager")]
     public List<GameStates> gameStates = new List<GameStates>();
 

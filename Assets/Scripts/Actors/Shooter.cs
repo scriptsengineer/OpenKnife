@@ -10,7 +10,7 @@ public class Shooter : MonoBehaviour
     public Mover mover;
 
     [Range(4f,16f)]
-    public float speedShooter = 8f;
+    public float speedShooter = 24f;
 
     private void Update()
     {

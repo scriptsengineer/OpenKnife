@@ -6,13 +6,13 @@ public class Knife : MonoBehaviour
 
     public bool isPlayer = false;
 
-
     private Rigidbody2D m_rigidbody2D;
-
+    private LevelManager levelManager;
 
     private void Awake()
     {
         m_rigidbody2D = GetComponent<Rigidbody2D>();
+        levelManager = GameManager.instance.GetComponent<LevelManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -21,11 +21,12 @@ public class Knife : MonoBehaviour
 
         if(other.tag == "Knife")
         {
-            StartCoroutine(StartGameOver());
             isPlayer = false;
             GetComponent<Mover>().speed = 0f;
             m_rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
-            m_rigidbody2D.AddForce(GetRandomForce(),ForceMode2D.Impulse);
+            m_rigidbody2D.AddForceAtPosition(PhysicsUtils.GetRandomForce(4f,8f),new Vector3(4f,0,0));
+
+            levelManager.onKnifeHitOnKnife.Invoke();
             
         }else
 
@@ -33,23 +34,11 @@ public class Knife : MonoBehaviour
         {
             gameObject.transform.parent = other.gameObject.transform.parent;
             GetComponent<Mover>().speed = 0f;
-
-            GameManager.instance.GetComponent<LevelManager>().RequestNewShoot();
             isPlayer = false;
+
+            levelManager.onKnifeHitOnWood.Invoke();
+            
         }
         
-    }
-
-    public IEnumerator StartGameOver()
-    {
-        yield return new WaitForSeconds(1f);
-        GameManager.instance.GameOver();
-    }
-
-    public static Vector3 GetRandomForce()
-    {
-        float xForce = Random.Range(4f,8f);
-        if(Random.Range(0,2) == 1) xForce*=-1;
-        return new Vector3(xForce,-1,0);
     }
 }

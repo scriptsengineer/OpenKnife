@@ -4,11 +4,12 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour, GameStates
 {
 
-    public Text status;
-
     public GameObject mainMenuPanel;
     public GameObject inGamePanel;
     public GameObject gameOverPanel;
+
+    [Header("References")]
+    public Text stageText;
 
     private void Start()
     {
@@ -22,7 +23,6 @@ public class UIManager : MonoBehaviour, GameStates
 
     public void GameOver(GameState newState,GameState oldState)
     {
-        status.text = "new="+newState+" old="+oldState;
         mainMenuPanel.SetActive(false);
         inGamePanel.SetActive(false);
         gameOverPanel.SetActive(true);
@@ -30,7 +30,6 @@ public class UIManager : MonoBehaviour, GameStates
 
     public void MainMenu(GameState newState,GameState oldState)
     {
-        status.text = "new="+newState+" old="+oldState;
         mainMenuPanel.SetActive(true);
         inGamePanel.SetActive(false);
         gameOverPanel.SetActive(false);
@@ -38,9 +37,14 @@ public class UIManager : MonoBehaviour, GameStates
 
     public void StartGame(GameState newState,GameState oldState)
     {
-        status.text = "new="+newState+" old="+oldState;
         mainMenuPanel.SetActive(false);
         inGamePanel.SetActive(true);
         gameOverPanel.SetActive(false);
+    }
+
+
+    public void UpdateStageText(int stage)
+    {
+        stageText.text = "STAGE "+stage;
     }
 }
