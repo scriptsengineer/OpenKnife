@@ -58,7 +58,7 @@ Um dos maiores problemas vistos nessa produção foi a dúvida que se deveria us
 
 ### Aonde o estágio ❓
 
-Para um designer é muito fácil apenas editar um arquivo, desde o ínicio foi planejado uso de  ![_ScriptableObject_](https://docs.unity3d.com/Manual/class-ScriptableObject.html).
+Para um designer é muito fácil apenas editar um arquivo, desde o ínicio foi planejado uso de  [_ScriptableObject_](https://docs.unity3d.com/Manual/class-ScriptableObject.html).
 
 ![Physic problem](https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Code_rDrUJHE2CC.png)
 
