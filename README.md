@@ -1,6 +1,6 @@
 # OpenKnife
 
-# Welcome to Open Knife 👋
+# Bem-vindo ao Open Knife 👋
 ![Version](https://img.shields.io/badge/version-0.9.1-blue.svg?cacheSeconds=2592000)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](todo-doc)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](MIT)
@@ -9,8 +9,11 @@
 ## 🔨 Recursos
 
 ✔️ Apenas uma cena para facilitar carregamento no celular.
+
 ✔️ Uso de 3 estados de jogo (Menu, InGame, GameOver)
+
 ✔️ _GameManager_ com todos managers instanciados utilizando interface.
+
 ✔️ _UnityEvents_ para uso fácil de designers no editor *Unity*.
 
 
@@ -29,14 +32,19 @@ Além de ser pai de toda interface do usuário, armazena o _Canvas_ também.
 ## Atores
 
 🧝 Player com _Shooter_,_Scorer_
+
 🧝 Madeira com _Rotator_,_CurveRotator_
+
 🧝 Facas com _Knife_,_RigidBody2D_
+
 🧝 Frutas com _Rigidbody2D_
 
 ## Stages
 
 ✔️ _ScriptableObjects_ para separar dados das cenas.
+
 ✔️ _AnimationCurves_ para tempo de interpolação da velocidade da madeira.
+
 ✔️ _AngleObject_ é uma lista que mantém itens de objeto com um ângulo.
 
 
