@@ -16,5 +16,9 @@ MonoBehaviour:
   boss: 0
   initialSpeed: 32
   angleObjects:
-  - angle: 119
+  - angle: 120
     objectType: 1
+  - angle: 30
+    objectType: 1
+  - angle: 60
+    objectType: 0

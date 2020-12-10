@@ -24,7 +24,7 @@ public class Knife : MonoBehaviour
             isPlayer = false;
             GetComponent<Mover>().speed = 0f;
             m_rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
-            m_rigidbody2D.AddForceAtPosition(PhysicsUtils.GetRandomForce(4f,8f),new Vector3(4f,0,0));
+            m_rigidbody2D.AddForceAtPosition(PhysicsUtils.GetRandomForce(128f,256f),Vector3.up);
 
             levelManager.onKnifeHitOnKnife.Invoke();
             

@@ -32,5 +32,5 @@ public struct AngleObject
 [System.Serializable]
 public enum ObjectType
 {
-    Apple,Knife
+    Fruit,Knife
 }

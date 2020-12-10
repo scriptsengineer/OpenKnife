@@ -23,7 +23,6 @@ public class LevelManager : MonoBehaviour,GameStates
     private List<GameObject> objectsInWood = new List<GameObject>();
     private Rotator rotator;
     private Shooter shooter;
-    //private Mover knifeToShoot;
     private int actualLevel = -1;
 
 
@@ -89,7 +88,8 @@ public class LevelManager : MonoBehaviour,GameStates
                 Quaternion.identity,
                 wood.transform);
                 // TODO diminuir do tamanho do objeto.
-            go.transform.position+=Vector3.up*2.4f;
+            go.transform.position+=Vector3.down*2f;
+            go.transform.RotateAround(transform.position, wood.transform.forward, ao.angle);
             objectsInWood.Add(go);
         }
 
