@@ -3,8 +3,7 @@
 // Rotate the object
 public class Rotator : MonoBehaviour
 {
-    [Range(-1f,1f)]
-    public float speed = 0.5f;
+    public float speed = 1f;
 
     // Update is called once per frame
     void Update()

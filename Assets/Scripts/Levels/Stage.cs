@@ -7,20 +7,13 @@ public class Stage : ScriptableObject
     [Range(2,12)]
     public int shoots = 7;
     public bool boss = false;
-    public float initialSpeed = 1f;
-    
-    [Header("Speeds in times")]
-    public List<SpeedTimer> speedTimers;
+
+    public float timerResetSpeedCurves = 16f;
+    public AnimationCurve speedCurves = new AnimationCurve(new Keyframe(0,-1f),new Keyframe(1,1f));
+    public float speedMultiplier = 32f;
 
     [Header("Objects in Level")]
     public List<AngleObject> angleObjects;
-}
-
-[System.Serializable]
-public struct SpeedTimer
-{
-    public float speed;
-    public float timer;
 }
 
 [System.Serializable]

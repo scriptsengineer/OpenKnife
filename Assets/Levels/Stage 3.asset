@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40a5796d1baa77246ba5de086b53fbdf, type: 3}
-  m_Name: Stage 1
+  m_Name: Stage 3
   m_EditorClassIdentifier: 
   shoots: 5
   boss: 0
@@ -28,44 +28,17 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.05039022
-      value: 1.0273081
-      inSlope: 11.907133
-      outSlope: 11.907133
+      time: 0.28622234
+      value: 0.7781514
+      inSlope: 1.7055941
+      outSlope: 1.7055941
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.22999133
-      value: 1.3966508
-      inSlope: 0.07612123
-      outSlope: 0.07612123
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.27697387
-      value: 0.017086461
-      inSlope: -14.148789
-      outSlope: -14.148789
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.46844736
-      value: -1.0078402
-      inSlope: -0.067079976
-      outSlope: -0.067079976
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.6104493
-      outWeight: 0.089441866
-    - serializedVersion: 3
-      time: 0.63362473
-      value: 1.3486573
+      time: 0.30344653
+      value: -0.9406864
       inSlope: 0.5418638
       outSlope: 0.5418638
       tangentMode: 0
@@ -73,27 +46,36 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.8539645
-      value: -0.98766387
-      inSlope: -11.840713
-      outSlope: -11.840713
+      time: 0.6000142
+      value: 0.9356868
+      inSlope: -1.0913295
+      outSlope: -1.0913295
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 0.14622879
-      inSlope: 0
-      outSlope: 0
+      time: 0.7557692
+      value: -0.11708087
+      inSlope: 21.004341
+      outSlope: 21.004341
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.03813751
+    - serializedVersion: 3
+      time: 0.9971835
+      value: -0.99773467
+      inSlope: -0.010825305
+      outSlope: -0.010825305
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.47525078
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speedMultiplier: 128
+  speedMultiplier: 64
   angleObjects:
   - angle: 0
     objectType: 1

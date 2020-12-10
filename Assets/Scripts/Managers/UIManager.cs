@@ -19,6 +19,9 @@ namespace OpenKnife.Managers
         private void Start()
         {
             GameManager.instance.gameStates.Add(this);
+            UpdateFruits(0);
+            UpdateScoreText(0);
+            UpdateStageText(0);
         }
 
         private void OnDisable()
@@ -28,7 +31,7 @@ namespace OpenKnife.Managers
 
         public void UpdateFruits(int fruits)
         {
-            stageText.text = fruits.ToString();
+            fruitsText.text = fruits.ToString();
         }
 
         public void GameOver(GameState newState, GameState oldState)

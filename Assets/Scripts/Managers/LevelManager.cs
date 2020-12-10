@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using OpenKnife.Gameplay;
+using OpenKnife.Actors;
 
 namespace OpenKnife.Managers
 {
@@ -34,7 +35,7 @@ namespace OpenKnife.Managers
 
         #region Private variables
         private List<GameObject> objectsInWood = new List<GameObject>();
-        private Rotator rotator;
+        private CurveRotator rotator;
         private Shooter shooter;
         private int actualLevel = -1;
         private Scorer scorer;
@@ -90,7 +91,7 @@ namespace OpenKnife.Managers
             // NOTE
             // Here it has been tested to pick up components in a different 
             // way using 'TryGetComponent'
-            bool check = wood.TryGetComponent<Rotator>(out rotator);
+            bool check = wood.TryGetComponent<CurveRotator>(out rotator);
             if (!check) Debug.LogError("Wood must have a rotator!");
 
             check = player.TryGetComponent<Shooter>(out shooter);
@@ -192,7 +193,7 @@ namespace OpenKnife.Managers
         // Set shoots
         private void Setting(Stage stage)
         {
-            rotator.speed = stage.initialSpeed;
+            rotator.Setting(stage.speedMultiplier,stage.speedCurves,stage.timerResetSpeedCurves);
             shooter.shoots = stage.shoots;
 
             if (stage.angleObjects.Count <= 0) return;
