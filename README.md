@@ -6,6 +6,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](MIT)
 [![Twitter: ScriptsEngineer](https://img.shields.io/twitter/follow/ScriptsEngineer.svg?style=social)](https://twitter.com/ScriptsEngineer)
 
+![Demo](https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/dioJMhfV3E.gif)
+
 ## 🔨 Recursos
 
 ✔️ Apenas uma cena para facilitar carregamento no celular.
@@ -52,22 +54,24 @@ Além de ser pai de toda interface do usuário, armazena o _Canvas_ também.
 
 ### Física ou Triggers?
 Um dos maiores problemas vistos nessa produção foi a dúvida que se deveria usar física ou não. Problemas de utilizar física do Unity podem ser vistos aqui:
+
 ![Physic problem](https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/GxxPtxn8Cu.gif)
 
 
-### Gerenciamento de estágio
+### Aonde o estágio?
 
-Um fator que pode ser visto como design seria saber se estágios são randomicos ou não? Na minha abordagem o resultado foi utilizar velocidades com AnimationCurve, assim sei que velocidades e de que maneiras o estágio vai se comportar.
+Para um designer é muito fácil apenas editar um arquivo, desde o ínicio foi planejado uso de  ![_ScriptableObject_](https://docs.unity3d.com/Manual/class-ScriptableObject.html).
+
 ![Physic problem](https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Code_rDrUJHE2CC.png)
 
-### Código complexo para designers
+### Um designer não deveria usar um editor de código?
 
-Trabalhando nesse projeto, deparei com certos problemas que seriam meus, obviamente um designer que deseja-se trocar um som de efeito ou escolher quando instanciar uma partícula na cena deveria modelar de um forma rápido, assim utilizei extensivamente o 'UnityEvent'
+Obviamente um designer que deseja-se trocar um som de efeito ou escolher quando instanciar uma partícula na cena deveria criar de um forma fácil e rápida, assim foi utilizado extensivamente o 'UnityEvent'.
+
 ![UnityEvents](https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Unity_tZZV1mtPlL.png)
 
 ## Tempo de produção
 ⏰ 12 horas
-
 
 ## Autor
 
@@ -86,6 +90,16 @@ Veja aqui => [issues page](https://github.com/ExpressoBits/EBConsole/issues).
 ## Show your support
 
 Dê uma ⭐️ se este projeto te ajudou!
+
+## Assets utilizados
+
+🎨 ![FREE Casual Game SFX Pack](https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116)
+
+🎨 ![20 Evolving Fantasy RPG Weapons](https://assetstore.unity.com/packages/2d/textures-materials/20-evolving-fantasy-rpg-weapons-61204)
+
+🎨 ![Free Pixel Font - Thaleah](https://assetstore.unity.com/packages/2d/fonts/free-pixel-font-thaleah-140059)
+
+🎨 ![Free Pixel Food](https://assetstore.unity.com/packages/2d/environments/free-pixel-food-113523)
 
 
 ## 📝 Licença
