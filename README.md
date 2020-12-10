@@ -19,16 +19,14 @@
 ✔️ _UnityEvents_ para uso fácil de designers no editor *Unity*.
 
 
-## Criação
-
-### Gerenciadores
+## Gerenciadores
 Foi criado certos gerenciadores para utilizar lógica e dados de forma fácil e limpa.
-#### GameManager 
-Um classe **singleton**. com estados do jogo, Importante notar aqui o uso de uma interface para todos componentes que queiram receber notificações de eventos dos estados do jogo
-#### LevelManager
-Responsável obviamente pelos estágios e seus carregamentos.
-#### UIManager
-Além de ser pai de toda interface do usuário, armazena o _Canvas_ também.
+
+🚨 _GameManager_: Um classe **singleton**. com estados do jogo, Importante notar aqui o uso de uma interface para todos componentes que queiram receber notificações de eventos dos estados do jogo.
+
+🚨 _LevelManager_: Responsável obviamente pelos estágios e seus carregamentos.
+
+🚨 UIManager: Além de ser pai de toda interface do usuário, armazena o _Canvas_ também.
 
 
 ## Atores
@@ -58,13 +56,13 @@ Um dos maiores problemas vistos nessa produção foi a dúvida que se deveria us
 ![Physic problem](https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/GxxPtxn8Cu.gif)
 
 
-### Aonde o estágio?
+### Aonde o estágio ❓
 
 Para um designer é muito fácil apenas editar um arquivo, desde o ínicio foi planejado uso de  ![_ScriptableObject_](https://docs.unity3d.com/Manual/class-ScriptableObject.html).
 
 ![Physic problem](https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Code_rDrUJHE2CC.png)
 
-### Um designer não deveria usar um editor de código?
+### 👨‍💻 Um designer não deveria usar um editor de código?
 
 Obviamente um designer que deseja-se trocar um som de efeito ou escolher quando instanciar uma partícula na cena deveria criar de um forma fácil e rápida, assim foi utilizado extensivamente o 'UnityEvent'.
 
@@ -81,13 +79,13 @@ Obviamente um designer que deseja-se trocar um som de efeito ou escolher quando 
 * Github: [@scriptsengineer](https://github.com/scriptsengineer)
 
 
-## 🤝 Contributing
+## 🤝 Contribuindo
 
 Contribuições, problemas and pedido de recursos são bem-vindos!
 
 Veja aqui => [issues page](https://github.com/ExpressoBits/EBConsole/issues).
 
-## Show your support
+## Ajude
 
 Dê uma ⭐️ se este projeto te ajudou!
 
