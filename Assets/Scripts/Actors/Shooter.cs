@@ -31,7 +31,7 @@ namespace OpenKnife.Gameplay
                 if (shoots > 0)
                 {
                     shoots--;
-                    GameManager.instance.UI.shootsPanel.Shoot();
+                    levelManager.onShoot.Invoke();
                     mover.force = Vector2.up * speedShooter;
                 }
                 else

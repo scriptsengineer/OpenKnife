@@ -19,8 +19,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: -1
+      time: -0.0026054382
+      value: 1.0119019
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -28,62 +28,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.05039022
-      value: 1.0273081
-      inSlope: 11.907133
-      outSlope: 11.907133
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.22999133
-      value: 1.3966508
-      inSlope: 0.07612123
-      outSlope: 0.07612123
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.27697387
-      value: 0.017086461
-      inSlope: -14.148789
-      outSlope: -14.148789
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.46844736
-      value: -1.0078402
-      inSlope: -0.067079976
-      outSlope: -0.067079976
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.6104493
-      outWeight: 0.089441866
-    - serializedVersion: 3
-      time: 0.63362473
-      value: 1.3486573
-      inSlope: 0.5418638
-      outSlope: 0.5418638
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.8539645
-      value: -0.98766387
-      inSlope: -11.840713
-      outSlope: -11.840713
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0.14622879
+      time: 0.9947815
+      value: 0.9941292
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -94,12 +40,4 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   speedMultiplier: 128
-  angleObjects:
-  - angle: 0
-    objectType: 1
-  - angle: 30
-    objectType: 1
-  - angle: 120
-    objectType: 0
-  - angle: 260
-    objectType: 1
+  angleObjects: []

@@ -17,11 +17,12 @@ namespace OpenKnife.UI
         public Text fruitsText;
         public Text scoreText;
         public ShootsPanel shootsPanel;
+        public Text stageTitle;
 
         private void Start()
         {
             GameManager.instance.gameStates.Add(this);
-            UpdateFruits(0);
+            UpdateFruitsText(0);
             UpdateScoreText(0);
             UpdateStageText(0);
         }
@@ -31,7 +32,7 @@ namespace OpenKnife.UI
             GameManager.instance.gameStates.Remove(this);
         }
 
-        public void UpdateFruits(int fruits)
+        public void UpdateFruitsText(int fruits)
         {
             fruitsText.text = fruits.ToString();
         }
@@ -55,6 +56,8 @@ namespace OpenKnife.UI
             mainMenuPanel.SetActive(false);
             inGamePanel.SetActive(true);
             gameOverPanel.SetActive(false);
+            UpdateScoreText(0);
+            UpdateFruitsText(0);
         }
 
 
@@ -66,6 +69,12 @@ namespace OpenKnife.UI
         public void UpdateScoreText(int value)
         {
             scoreText.text = value.ToString();
+        }
+
+        public void UpdateStageTitleText(int value)
+        {
+            stageTitle.gameObject.SetActive(true);
+            stageTitle.text = "STAGE "+(value+1);
         }
     }
 }

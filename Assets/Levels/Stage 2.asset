@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a5796d1baa77246ba5de086b53fbdf, type: 3}
   m_Name: Stage 2
   m_EditorClassIdentifier: 
-  shoots: 5
+  shoots: 8
   boss: 0
   timerResetSpeedCurves: 16
   speedCurves:
@@ -52,9 +52,5 @@ MonoBehaviour:
   angleObjects:
   - angle: 0
     objectType: 1
-  - angle: 30
-    objectType: 1
-  - angle: 120
-    objectType: 0
-  - angle: 260
+  - angle: 125
     objectType: 1

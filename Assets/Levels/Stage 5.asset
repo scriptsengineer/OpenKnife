@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40a5796d1baa77246ba5de086b53fbdf, type: 3}
-  m_Name: Stage 3
+  m_Name: Stage 5
   m_EditorClassIdentifier: 
-  shoots: 6
+  shoots: 12
   boss: 0
   timerResetSpeedCurves: 128
   speedCurves:
@@ -37,46 +37,19 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.1868236
-      value: -2.017957
-      inSlope: 0.5418638
-      outSlope: 0.5418638
+      time: 0.36169815
+      value: 1.9032214
+      inSlope: 2.6204863
+      outSlope: 2.6204863
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.3122635
-      value: 1.5784397
-      inSlope: -8.201
-      outSlope: -8.201
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.36319542
-    - serializedVersion: 3
-      time: 0.5100789
-      value: -1.7382634
-      inSlope: -1.0913295
-      outSlope: -1.0913295
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.57609606
-      value: 1.4273747
-      inSlope: -4.4047003
-      outSlope: -4.4047003
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.7452114
-      value: -1.7102342
-      inSlope: 3.1964388
-      outSlope: 3.1964388
+      time: 0.5141888
+      value: -1.9725063
+      inSlope: 0.20337713
+      outSlope: 0.20337713
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -111,13 +84,17 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speedMultiplier: 64
+  speedMultiplier: 256
   angleObjects:
   - angle: 0
     objectType: 1
-  - angle: 30
+  - angle: 180
     objectType: 1
-  - angle: 120
+  - angle: 290
+    objectType: 1
+  - angle: 310
+    objectType: 1
+  - angle: 20
     objectType: 0
-  - angle: 260
-    objectType: 1
+  - angle: 340
+    objectType: 0

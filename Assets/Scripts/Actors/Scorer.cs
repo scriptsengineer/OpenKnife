@@ -22,6 +22,16 @@ namespace OpenKnife.Gameplay
             if (value < 0) return;
             fruits += value;
         }
+
+        public void ClearScore()
+        {
+            score = 0;
+        }
+
+        public void ClearFruits()
+        {
+            fruits = 0;
+        }
     }
 }
 

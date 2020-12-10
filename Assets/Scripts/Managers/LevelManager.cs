@@ -30,6 +30,9 @@ namespace OpenKnife.Managers
         public UnityEvent onKnifeHitOnKnife;
         public UnityEvent onScore;
         public UnityEvent onFruitSlice;
+        public UnityEvent onStageInit;
+        public UnityEvent onStageFinish;
+        public UnityEvent onShoot;
 
         #endregion
 
@@ -37,7 +40,7 @@ namespace OpenKnife.Managers
         private List<GameObject> objectsInWood = new List<GameObject>();
         private CurveRotator rotator;
         private Shooter shooter;
-        private int actualLevel = -1;
+        private int actualStage = -1;
         private Scorer scorer;
         #endregion
 
@@ -63,7 +66,7 @@ namespace OpenKnife.Managers
 
         public void StartGame(GameState newState, GameState oldState)
         {
-            actualLevel = -1;
+            actualStage = -1;
             Next();
         }
 
@@ -82,6 +85,7 @@ namespace OpenKnife.Managers
 
         private IEnumerator StartLevel()
         {
+            onStageInit.Invoke();
             yield return new WaitForSeconds(1f);
             RequestNewShoot();
         }
@@ -126,11 +130,25 @@ namespace OpenKnife.Managers
                 Destroy(go, 1f);
 
                 scorer.AddFruits(1);
-                GameManager.instance.UI.UpdateFruits(scorer.Fruits);
+                GameManager.instance.UI.UpdateFruitsText(scorer.Fruits);
             });
             onScore.AddListener(delegate
             {
                 GameManager.instance.UI.UpdateScoreText(scorer.Score);
+            });
+
+            onStageInit.AddListener(delegate
+            {
+                GameManager.instance.UI.UpdateStageTitleText(actualStage);
+            });
+            onStageFinish.AddListener(delegate
+            {
+                GameManager.instance.UI.stageTitle.gameObject.SetActive(false);
+            });
+
+            onShoot.AddListener(delegate
+            {
+                GameManager.instance.UI.shootsPanel.Shoot();
             });
         }
 
@@ -166,6 +184,7 @@ namespace OpenKnife.Managers
             }
             else
             {
+                onStageFinish.Invoke();
                 Clear();
                 Next();
             }
@@ -174,15 +193,15 @@ namespace OpenKnife.Managers
         // Calls next stage, also checking if this level is available to load.
         private void Next()
         {
-            actualLevel++;
-            GameManager.instance.UI.UpdateStageText(actualLevel);
-            if (stages.Length <= actualLevel)
+            actualStage++;
+            GameManager.instance.UI.UpdateStageText(actualStage);
+            if (stages.Length <= actualStage)
             {
                 GameManager.instance.GameOver();
             }
             else
             {
-                Setting(stages[actualLevel]);
+                Setting(stages[actualStage]);
             }
         }
 
@@ -195,8 +214,6 @@ namespace OpenKnife.Managers
         {
             rotator.Setting(stage.speedMultiplier,stage.speedCurves,stage.timerResetSpeedCurves);
             shooter.SetNewShoots(stage.shoots);
-
-            if (stage.angleObjects.Count <= 0) return;
 
             foreach (AngleObject ao in stage.angleObjects)
             {
