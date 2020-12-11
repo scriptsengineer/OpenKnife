@@ -1,7 +1,7 @@
 # Welcome to Open Knife 👋 [🇧🇷](https://github.com/ScriptsEngineer/OpenKnife/wiki/README_PT_BR)
 ![Version](https://img.shields.io/badge/version-0.2.5-blue.svg?cacheSeconds=2592000&style=flat-square)
-[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg&&style=flat-square)](todo-doc)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg&style=flat-square)](MIT)
+[![Documentation](https://img.shields.io/badge/Documentation-yes-brightgreen.svg?&style=flat-square)](todo-doc)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?&style=flat-square)](MIT)
 [![Twitter: ScriptsEngineer](https://img.shields.io/twitter/follow/ScriptsEngineer.svg?style=flat-square)](https://twitter.com/ScriptsEngineer)
 
 <img align="right" src="https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/dioJMhfV3E.gif">
