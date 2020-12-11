@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using OpenKnife.Actors;
 using OpenKnife.States;
-using OpenKnife.UI;
 
 namespace OpenKnife.Levels
 {
+
     public class LevelManager : MonoBehaviour, GameStates
     {
         #region Public variables
@@ -25,7 +25,6 @@ namespace OpenKnife.Levels
         public GameObject wood;
         public Transform spawnShooter;
 
-
         [Header("Events")]
         public UnityEvent onKnifeHitOnWood;
         public UnityEvent onKnifeHitOnKnife;
@@ -35,6 +34,11 @@ namespace OpenKnife.Levels
         public UnityEvent onStageFinish;
         public UnityEvent onShoot;
 
+        public int ActualStage => actualStage;
+        public int ActualScore => scorer.Score;
+        public int Fruits => scorer.Fruits;
+        public int Shoots => shooter.Shoots;
+        
         #endregion
 
         #region Private variables
@@ -134,26 +138,9 @@ namespace OpenKnife.Levels
                 Destroy(go, 1f);
 
                 scorer.AddFruits(1);
-                UIManager.instance.UpdateFruitsText(scorer.Fruits);
-            });
-            onScore.AddListener(delegate
-            {
-                UIManager.instance.UpdateScoreText(scorer.Score);
             });
 
-            onStageInit.AddListener(delegate
-            {
-                UIManager.instance.UpdateStageTitleText(actualStage);
-            });
-            onStageFinish.AddListener(delegate
-            {
-                UIManager.instance.stageTitle.gameObject.SetActive(false);
-            });
-
-            onShoot.AddListener(delegate
-            {
-                UIManager.instance.shootsPanel.Shoot();
-            });
+            
         }
 
         // Prepare for next shooter
@@ -201,7 +188,6 @@ namespace OpenKnife.Levels
         private void Next()
         {
             actualStage++;
-            UIManager.instance.UpdateStageText(actualStage);
             if (stages.Length <= actualStage)
             {
                 GameManager.instance.GameOver();

@@ -3,7 +3,8 @@
     "references": [
         "OpenKnife.States",
         "OpenKnife",
-        "UnityEngine.UI"
+        "UnityEngine.UI",
+        "OpenKnife.Levels"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

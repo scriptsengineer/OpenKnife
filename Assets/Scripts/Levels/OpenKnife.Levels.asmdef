@@ -1,10 +1,9 @@
 {
     "name": "OpenKnife.Levels",
     "references": [
-        "OpenKnife.Actors",
-        "OpenKnife.States",
         "OpenKnife",
-        "OpenKnife.UI"
+        "OpenKnife.Actors",
+        "OpenKnife.States"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

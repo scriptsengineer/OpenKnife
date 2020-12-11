@@ -2,8 +2,7 @@
     "name": "OpenKnife.Actors",
     "references": [
         "OpenKnife.Utils",
-        "OpenKnife",
-        "OpenKnife.UI"
+        "OpenKnife"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

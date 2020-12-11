@@ -1,6 +1,5 @@
 using UnityEngine;
 using OpenKnife;
-using OpenKnife.UI;
 using UnityEngine.Events;
 
 namespace OpenKnife.Actors
@@ -16,6 +15,7 @@ namespace OpenKnife.Actors
     {
         private int shoots = 0;
         public ShootEvent m_ShootEvent = new ShootEvent();
+        public ShootEvent m_NewShoots = new ShootEvent();
 
         public ConstantForce2D mover;
 
@@ -27,7 +27,6 @@ namespace OpenKnife.Actors
         public void SetNewShoots(int shoots)
         {
             this.shoots = shoots;
-            UIManager.instance.shootsPanel.SetNewShoots(shoots);
         }
 
         private void Update()

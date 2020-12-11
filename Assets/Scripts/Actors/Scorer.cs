@@ -10,6 +10,12 @@ namespace OpenKnife.Actors
         public int Score => score;
         public int Fruits => fruits;
 
+        private void Start()
+        {
+            score = 0;
+            fruits = 0;
+        }
+
         public void AddScore(int value)
         {
             if (value < 0) return;

@@ -3,6 +3,7 @@ using OpenKnife;
 using OpenKnife.States;
 using UnityEngine;
 using UnityEngine.UI;
+using OpenKnife.Levels;
 
 namespace OpenKnife.UI
 {
@@ -14,6 +15,8 @@ namespace OpenKnife.UI
         public GameObject mainMenuPanel;
         public GameObject inGamePanel;
         public GameObject gameOverPanel;
+
+        private LevelManager levelManager;
 
         [Header("References")]
         public Text stageText;
@@ -36,10 +39,37 @@ namespace OpenKnife.UI
 
         private void Start()
         {
+            levelManager = GameManager.instance.GetComponent<LevelManager>();
             GameManager.instance.gameStates.Add(this);
             UpdateFruitsText(0);
             UpdateScoreText(0);
             UpdateStageText(0);
+
+            levelManager.onShoot.AddListener(delegate
+            {
+                shootsPanel.Shoot();
+            });
+            levelManager.onStageFinish.AddListener(delegate
+            {
+                stageTitle.gameObject.SetActive(false);
+            });
+            levelManager.onStageInit.AddListener(delegate
+            {
+                UpdateStageTitleText(levelManager.ActualStage);
+                shootsPanel.SetNewShoots(levelManager.Shoots);
+            });
+            levelManager.onScore.AddListener(delegate
+            {
+                UpdateScoreText(levelManager.ActualScore);
+            });
+            levelManager.onStageInit.AddListener(delegate
+            {
+                UpdateStageText(levelManager.ActualStage);
+            });
+            levelManager.onFruitSlice.AddListener(delegate
+            {
+                UpdateFruitsText(levelManager.Fruits);
+            });
         }
 
         private void OnDisable()
