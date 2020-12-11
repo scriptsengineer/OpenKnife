@@ -8,7 +8,7 @@ namespace OpenKnife.Levels
     {
         [Range(2,12)]
         public int shoots = 7;
-        public bool boss = false;
+        public bool isBoss = false;
 
         public float timerResetSpeedCurves = 16f;
         public AnimationCurve speedCurves = new AnimationCurve(new Keyframe(0,-1f),new Keyframe(1,1f));

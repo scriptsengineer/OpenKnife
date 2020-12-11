@@ -14,7 +14,7 @@
 
 ✔️ Uso de 3 estados de jogo (Menu, InGame, GameOver)
 
-✔️ _GameManager_ é com todos managers instanciados utilizando interface.
+✔️ _GameManager_ é um **singleton** com todos managers instanciados utilizando interface.
 
 ✔️ _UnityEvents_ para uso fácil de designers no editor *Unity*.
 
@@ -22,7 +22,12 @@
 
 ✔️ Separação total da lógica do jogo com UI, nada depende da interface do usuário e sua lógica.
 
-✔️ Uso do Test Framework para testes de procedimentos.
+✔️ Utilizado URP com renderização rápida e fácil para plataforma mobile.
+
+✔️ Simples animações de UI com uso de triggers.
+
+✔️ Uso do [Test Framework](https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/index.html) para testes de procedimentos.
+
 <img align="right" src="https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Tests.png">
 
 
@@ -38,13 +43,13 @@ Foi criado certos gerenciadores para utilizar lógica e dados de forma fácil e 
 
 ## Atores
 
-🧝 Player com _Shooter_,_Scorer_
+⛹️ Player com _Shooter_,_Scorer_
 
-🧝 Madeira com _Rotator_,_CurveRotator_
+⛹️ Madeira com _Rotator_,_CurveRotator_
 
-🧝 Facas com _Knife_,_RigidBody2D_
+⛹️ Facas com _Knife_,_RigidBody2D_
 
-🧝 Frutas com _Rigidbody2D_
+⛹️ Frutas com _Rigidbody2D_
 
 ## Stages
 

@@ -24,6 +24,7 @@ namespace OpenKnife.UI
         public Text scoreText;
         public ShootsPanel shootsPanel;
         public Text stageTitle;
+        public Text bossTitle;
 
         private void Awake()
         {
@@ -52,10 +53,11 @@ namespace OpenKnife.UI
             levelManager.onStageFinish.AddListener(delegate
             {
                 stageTitle.gameObject.SetActive(false);
+                bossTitle.gameObject.SetActive(false);
             });
             levelManager.onStageInit.AddListener(delegate
             {
-                UpdateStageTitleText(levelManager.ActualStage);
+                UpdateStageTitleText(levelManager.ActualStage,levelManager.IsBoss);
                 shootsPanel.SetNewShoots(levelManager.Shoots);
             });
             levelManager.onScore.AddListener(delegate
@@ -116,8 +118,12 @@ namespace OpenKnife.UI
             scoreText.text = value.ToString();
         }
 
-        public void UpdateStageTitleText(int value)
+        public void UpdateStageTitleText(int value,bool boss)
         {
+            if(boss)
+            {
+                bossTitle.gameObject.SetActive(true);
+            }
             stageTitle.gameObject.SetActive(true);
             stageTitle.text = "STAGE "+(value+1);
         }
