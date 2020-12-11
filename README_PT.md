@@ -1,5 +1,3 @@
-# OpenKnife
-
 # Bem-vindo ao Open Knife 👋
 ![Version](https://img.shields.io/badge/version-0.2.5-blue.svg?cacheSeconds=2592000)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](todo-doc)
