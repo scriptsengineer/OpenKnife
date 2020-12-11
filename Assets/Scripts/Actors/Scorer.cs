@@ -1,7 +1,6 @@
-using OpenKnife.Managers;
 using UnityEngine;
 
-namespace OpenKnife.Gameplay
+namespace OpenKnife.Actors
 {
     public class Scorer : MonoBehaviour
     {

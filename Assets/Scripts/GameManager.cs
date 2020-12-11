@@ -1,18 +1,15 @@
 using System.Collections.Generic;
-using OpenKnife.UI;
 using UnityEngine;
 using UnityEngine.Events;
+using OpenKnife.States;
 
-namespace OpenKnife.Managers
+namespace OpenKnife
 {
     public class GameManager : MonoBehaviour
     {
         public static GameManager instance;
         private GameState state;
         private GameState oldState;
-
-        [Header("References")]
-        public UIManager UI;
 
         [Header("Events")]
         public UnityEvent onStartGame;

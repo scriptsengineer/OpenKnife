@@ -1,8 +1,8 @@
 using UnityEngine;
-using OpenKnife.Managers;
 using OpenKnife.Utils;
+using UnityEngine.Events;
 
-namespace OpenKnife.Gameplay
+namespace OpenKnife.Actors
 {
 
     public class Knife : MonoBehaviour
@@ -11,13 +11,15 @@ namespace OpenKnife.Gameplay
         public bool isPlayer = false;
 
         private Rigidbody2D m_rigidbody2D;
-        private LevelManager m_LevelManager;
         private ConstantForce2D m_Mover;
+
+        public UnityEvent onCollisionWood;
+        public UnityEvent onCollisionKnife;
+        public UnityEvent onCollisionFruit;
 
         private void Awake()
         {
             m_rigidbody2D = GetComponent<Rigidbody2D>();
-            m_LevelManager = GameManager.instance.GetComponent<LevelManager>();
         }
 
         private void StopPlayerMovement()
@@ -37,10 +39,8 @@ namespace OpenKnife.Gameplay
 
             if (other.gameObject.tag == "Fruit")
             {
-                
-                m_LevelManager.onFruitSlice.Invoke();
                 Destroy(other.gameObject);
-
+                onCollisionFruit?.Invoke();
             }
 
         }
@@ -55,8 +55,8 @@ namespace OpenKnife.Gameplay
                 StopPlayerMovement();
                 m_rigidbody2D.AddForce(PhysicsUtils.GetRandomForce(32f, 32f), 
                     ForceMode2D.Impulse);
-                m_LevelManager.onKnifeHitOnKnife.Invoke();
                 m_rigidbody2D.gravityScale = 1;
+                onCollisionKnife?.Invoke();
 
             }
             else if (other.gameObject.tag == "Wood")
@@ -65,7 +65,7 @@ namespace OpenKnife.Gameplay
                 m_rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
                 StopPlayerMovement();
                 gameObject.transform.parent = other.transform.parent;
-                m_LevelManager.onKnifeHitOnWood.Invoke();
+                onCollisionWood?.Invoke();
 
             }
         }

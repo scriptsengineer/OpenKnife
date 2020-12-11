@@ -68,6 +68,10 @@ Obviamente um designer que deseja-se trocar um som de efeito ou escolher quando 
 
 ![UnityEvents](https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Unity_tZZV1mtPlL.png)
 
+## Uso de Assembly Definition
+
+Uso de pacotes de montagem para cada namespace do projeto, divindo assim o uso de recursos ajudando no uso de testes.
+
 ## Tempo de produção
 ⏰ 12 horas
 
@@ -77,7 +81,6 @@ Obviamente um designer que deseja-se trocar um som de efeito ou escolher quando 
 (Script)
 * Twitter: [@ScriptsEngineer](https://twitter.com/ScriptsEngineer)
 * Github: [@scriptsengineer](https://github.com/scriptsengineer)
-
 
 ## 🤝 Contribuindo
 

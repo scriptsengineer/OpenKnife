@@ -1,4 +1,4 @@
-namespace OpenKnife.Managers
+namespace OpenKnife.States
 {
     public interface GameStates
     {

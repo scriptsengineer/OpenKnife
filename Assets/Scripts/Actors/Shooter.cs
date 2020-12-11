@@ -1,14 +1,21 @@
 using UnityEngine;
-using OpenKnife.Managers;
+using OpenKnife;
+using OpenKnife.UI;
+using UnityEngine.Events;
 
-namespace OpenKnife.Gameplay
+namespace OpenKnife.Actors
 {
+
+    [System.Serializable]
+    public class ShootEvent : UnityEvent<int>
+    {
+    }
+
     // Press any button for shoot object
     public class Shooter : MonoBehaviour
     {
         private int shoots = 0;
-        [HideInInspector]
-        public LevelManager levelManager;
+        public ShootEvent m_ShootEvent = new ShootEvent();
 
         public ConstantForce2D mover;
 
@@ -20,7 +27,7 @@ namespace OpenKnife.Gameplay
         public void SetNewShoots(int shoots)
         {
             this.shoots = shoots;
-            GameManager.instance.UI.shootsPanel.SetNewShoots(shoots);
+            UIManager.instance.shootsPanel.SetNewShoots(shoots);
         }
 
         private void Update()
@@ -31,12 +38,8 @@ namespace OpenKnife.Gameplay
                 if (shoots > 0)
                 {
                     shoots--;
-                    levelManager.onShoot.Invoke();
+                    m_ShootEvent?.Invoke(shoots);
                     mover.force = Vector2.up * speedShooter;
-                }
-                else
-                {
-                    //enabled = false;
                 }
                 enabled = false;
 

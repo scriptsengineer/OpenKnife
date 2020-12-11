@@ -1,5 +1,6 @@
 using System;
-using OpenKnife.Managers;
+using OpenKnife;
+using OpenKnife.States;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,8 @@ namespace OpenKnife.UI
 {
     public class UIManager : MonoBehaviour, GameStates
     {
+
+        public static UIManager instance;
 
         public GameObject mainMenuPanel;
         public GameObject inGamePanel;
@@ -18,6 +21,18 @@ namespace OpenKnife.UI
         public Text scoreText;
         public ShootsPanel shootsPanel;
         public Text stageTitle;
+
+        private void Awake()
+        {
+            if (instance != null)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                instance = this;
+            }
+        }
 
         private void Start()
         {

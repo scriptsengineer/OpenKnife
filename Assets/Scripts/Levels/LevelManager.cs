@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using OpenKnife.Gameplay;
 using OpenKnife.Actors;
+using OpenKnife.States;
+using OpenKnife.UI;
 
-namespace OpenKnife.Managers
+namespace OpenKnife.Levels
 {
     public class LevelManager : MonoBehaviour, GameStates
     {
@@ -47,7 +48,10 @@ namespace OpenKnife.Managers
         private void Awake()
         {
             CheckAndGetInternalReferences();
-            shooter.levelManager = this;
+            shooter.m_ShootEvent.AddListener(delegate
+            {
+                onShoot.Invoke();
+            });
         }
 
         private void Start()
@@ -130,25 +134,25 @@ namespace OpenKnife.Managers
                 Destroy(go, 1f);
 
                 scorer.AddFruits(1);
-                GameManager.instance.UI.UpdateFruitsText(scorer.Fruits);
+                UIManager.instance.UpdateFruitsText(scorer.Fruits);
             });
             onScore.AddListener(delegate
             {
-                GameManager.instance.UI.UpdateScoreText(scorer.Score);
+                UIManager.instance.UpdateScoreText(scorer.Score);
             });
 
             onStageInit.AddListener(delegate
             {
-                GameManager.instance.UI.UpdateStageTitleText(actualStage);
+                UIManager.instance.UpdateStageTitleText(actualStage);
             });
             onStageFinish.AddListener(delegate
             {
-                GameManager.instance.UI.stageTitle.gameObject.SetActive(false);
+                UIManager.instance.stageTitle.gameObject.SetActive(false);
             });
 
             onShoot.AddListener(delegate
             {
-                GameManager.instance.UI.shootsPanel.Shoot();
+                UIManager.instance.shootsPanel.Shoot();
             });
         }
 
@@ -160,6 +164,9 @@ namespace OpenKnife.Managers
             mover.force = Vector2.zero;
             Knife knife = go.GetComponent<Knife>();
             knife.isPlayer = true;
+            knife.onCollisionWood.AddListener(delegate{onKnifeHitOnWood.Invoke();});
+            knife.onCollisionKnife.AddListener(delegate{onKnifeHitOnKnife.Invoke();});
+            knife.onCollisionFruit.AddListener(delegate{onFruitSlice.Invoke();});
             objectsInWood.Add(go);
             shooter.mover = mover;
             shooter.enabled = true;
@@ -194,7 +201,7 @@ namespace OpenKnife.Managers
         private void Next()
         {
             actualStage++;
-            GameManager.instance.UI.UpdateStageText(actualStage);
+            UIManager.instance.UpdateStageText(actualStage);
             if (stages.Length <= actualStage)
             {
                 GameManager.instance.GameOver();

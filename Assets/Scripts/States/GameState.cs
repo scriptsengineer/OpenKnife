@@ -1,4 +1,4 @@
-namespace OpenKnife.Managers
+namespace OpenKnife.States
 {
     [System.Serializable]
     public enum GameState

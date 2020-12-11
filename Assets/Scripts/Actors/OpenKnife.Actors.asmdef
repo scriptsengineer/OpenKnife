@@ -1,0 +1,17 @@
+{
+    "name": "OpenKnife.Actors",
+    "references": [
+        "OpenKnife.Utils",
+        "OpenKnife",
+        "OpenKnife.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
