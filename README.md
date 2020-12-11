@@ -15,6 +15,15 @@
 ✔️ Uso de 3 estados de jogo (Menu, InGame, GameOver)
 
 ✔️ _GameManager_ é um **singleton** com todos managers instanciados utilizando interface.
+    ```csharp
+    private void Awake()
+    {
+        ...
+
+        GameStates[] internStates = GetComponents<GameStates>();
+        gameStates.AddRange(internStates);
+    }
+    ```
 
 ✔️ _UnityEvents_ para uso fácil de designers no editor *Unity*.
 
@@ -22,9 +31,11 @@
 
 ✔️ Separação total da lógica do jogo com UI, nada depende da interface do usuário e sua lógica.
 
-✔️ Utilizado URP com renderização rápida e fácil para plataforma mobile.
+✔️ Utilizado [URP](https://github.com/Unity-Technologies/Graphics/tree/7.x.x/release/com.unity.render-pipelines.universal) com renderização rápida e fácil para plataforma mobile.
 
 ✔️ Simples animações de UI com uso de triggers.
+
+✔️ Modo de chefe [Pull Request #1](https://github.com/ScriptsEngineer/OpenKnife/pull/7).
 
 ✔️ Uso do [Test Framework](https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/index.html) para testes de procedimentos.
 
@@ -116,8 +127,6 @@ Dê uma ⭐️ se este projeto te ajudou!
 
 
 ## 📝 Licença
-
-Copyright © 2020 [Rafael Correa](https://github.com/scriptsengineer).
 
 Este projeto é licenciado pelo [MIT](MIT).
 
