@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?&style=flat-square)](MIT)
 [![Twitter: ScriptsEngineer](https://img.shields.io/twitter/follow/ScriptsEngineer.svg?style=flat-square)](https://twitter.com/ScriptsEngineer)
 ![GitHub issues](https://img.shields.io/github/issues/scriptsengineer/openknife?style=flat-square)
-![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/scriptsengineer/openknife)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/scriptsengineer/openknife?style=flat-square)
 
 <img align="right" src="https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/dioJMhfV3E.gif">
 
