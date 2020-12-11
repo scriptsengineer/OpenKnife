@@ -38,6 +38,7 @@ namespace OpenKnife.Levels
         public int ActualScore => scorer.Score;
         public int Fruits => scorer.Fruits;
         public int Shoots => shooter.Shoots;
+        public bool IsBoss => stages[actualStage].isBoss;
         
         #endregion
 
@@ -139,8 +140,6 @@ namespace OpenKnife.Levels
 
                 scorer.AddFruits(1);
             });
-
-            
         }
 
         // Prepare for next shooter
@@ -215,12 +214,17 @@ namespace OpenKnife.Levels
                     wood.transform.position,
                     Quaternion.identity,
                     wood.transform);
-                // FIXME Don' use hardcoded, use collider size!.
+                // FIXME Don't use hardcoded, use collider size!.
                 go.transform.position += Vector3.down * 2f;
                 go.transform.RotateAround(transform.position, wood.transform.forward, ao.angle);
                 objectsInWood.Add(go);
                 go.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
             }
+
+            SpriteRenderer renderer = wood.GetComponentInChildren<SpriteRenderer>();
+            renderer.color = IsBoss ? 
+                new Color(Random.Range(0f,1f),Random.Range(0f,1f),Random.Range(0f,1f)) 
+                : Color.white;
 
             StartCoroutine(StartLevel());
 
