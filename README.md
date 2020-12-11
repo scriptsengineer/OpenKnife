@@ -15,15 +15,14 @@
 ✔️ Uso de 3 estados de jogo (Menu, InGame, GameOver)
 
 ✔️ _GameManager_ é um **singleton** com todos managers instanciados utilizando interface.
-    ```csharp
+```csharp
     private void Awake()
     {
         ...
-
         GameStates[] internStates = GetComponents<GameStates>();
         gameStates.AddRange(internStates);
     }
-    ```
+```
 
 ✔️ _UnityEvents_ para uso fácil de designers no editor *Unity*.
 
@@ -37,9 +36,11 @@
 
 ✔️ Modo de chefe [Pull Request #1](https://github.com/ScriptsEngineer/OpenKnife/pull/7).
 
+<img align="right" src="https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Tests.png">
+
 ✔️ Uso do [Test Framework](https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/index.html) para testes de procedimentos.
 
-<img align="right" src="https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Tests.png">
+
 
 
 ## Gerenciadores
