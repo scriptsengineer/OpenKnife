@@ -16,14 +16,10 @@
 
 ✔️ _GameManager_ é um **singleton** com todos managers instanciados utilizando interface.
 ```csharp
-    private void Awake()
-    {
-        ...
-        GameStates[] internStates = GetComponents<GameStates>();
-        gameStates.AddRange(internStates);
-    }
-```
+GameStates[] internStates = GetComponents<GameStates>();
+gameStates.AddRange(internStates);
 
+```
 ✔️ _UnityEvents_ para uso fácil de designers no editor *Unity*.
 
 ✔️ Projeto com estrutura dividida com [definições de montagem](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html), ajudando em tempos de compilações menores,obrigando uso de [SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) e divisão de testes.
@@ -34,9 +30,9 @@
 
 ✔️ Simples animações de UI com uso de triggers.
 
-✔️ Modo de chefe [Pull Request #1](https://github.com/ScriptsEngineer/OpenKnife/pull/7).
-
 <img align="right" src="https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Tests.png">
+
+✔️ Modo de chefe [Pull Request #1](https://github.com/ScriptsEngineer/OpenKnife/pull/7).
 
 ✔️ Uso do [Test Framework](https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/index.html) para testes de procedimentos.
 
