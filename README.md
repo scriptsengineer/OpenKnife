@@ -83,7 +83,7 @@ One of the biggest problems seen in this production was the doubt that one shoul
 For a designer it is very easy to just edit a file, in this way it was used the
 [_ScriptableObject_](https://docs.unity3d.com/Manual/class-ScriptableObject.html).
 
-!Stage Object](https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Code_rDrUJHE2CC.png)
+![Stage Object](https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Code_rDrUJHE2CC.png)
 
 ### 👨‍💻 Shouldn't a designer use a code editor ?
 
