@@ -30,11 +30,13 @@ gameStates.AddRange(internStates);
 
 ✔️ Simples animações de UI com uso de triggers.
 
-<img align="right" src="https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Tests.png">
-
 ✔️ Modo de chefe [Pull Request #1](https://github.com/ScriptsEngineer/OpenKnife/pull/7).
 
+<img align="right" src="https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Tests.png">
+
 ✔️ Uso do [Test Framework](https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/index.html) para testes de procedimentos.
+    - Testes de runtime.
+    - Testes de editor.
 
 
 
