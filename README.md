@@ -5,6 +5,7 @@
 [![Twitter: ScriptsEngineer](https://img.shields.io/twitter/follow/ScriptsEngineer.svg?style=flat-square)](https://twitter.com/ScriptsEngineer)
 ![GitHub issues](https://img.shields.io/github/issues/scriptsengineer/openknife?style=flat-square)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/scriptsengineer/openknife?style=flat-square)
+![GitHub language count](https://img.shields.io/github/languages/count/scriptsengineer/openknife?style=flat-square)
 
 <img align="right" src="https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/dioJMhfV3E.gif">
 
