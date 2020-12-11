@@ -14,9 +14,16 @@
 
 ✔️ Uso de 3 estados de jogo (Menu, InGame, GameOver)
 
-✔️ _GameManager_ com todos managers instanciados utilizando interface.
+✔️ _GameManager_ é com todos managers instanciados utilizando interface.
 
 ✔️ _UnityEvents_ para uso fácil de designers no editor *Unity*.
+
+✔️ Projeto com estrutura dividida com [definições de montagem](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html), ajudando em tempos de compilações menores,obrigando uso de [SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) e divisão de testes.
+
+✔️ Separação total da lógica do jogo com UI, nada depende da interface do usuário e sua lógica.
+
+✔️ Uso do Test Framework para testes de procedimentos.
+<img align="right" src="https://github.com/ScriptsEngineer/OpenKnife/blob/main/Docs/Images/Tests.png">
 
 
 ## Gerenciadores

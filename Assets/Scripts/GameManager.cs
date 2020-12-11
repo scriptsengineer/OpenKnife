@@ -16,7 +16,6 @@ namespace OpenKnife
         public UnityEvent onGameOver;
         public UnityEvent onMainMenu;
 
-        [Header("Definir classes que tem gamestates chamados automaticamente quando modificado pelo gameManager")]
         public List<GameStates> gameStates = new List<GameStates>();
         public GameState State => state;
 
