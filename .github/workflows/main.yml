@@ -24,8 +24,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        - name: Unity Linter
-  uses: integraldx/UnityLinter@v0.1.0
+      - name: Unity Linter
+        uses: integraldx/UnityLinter@v0.1.0
 
 
       # Runs a single command using the runners shell
