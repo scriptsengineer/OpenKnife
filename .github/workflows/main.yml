@@ -1,31 +1,31 @@
-# This is a basic workflow to help you get started with Actions
+# # This is a basic workflow to help you get started with Actions
 
-name: CI
+# name: CI
 
-# Controls when the action will run. 
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+# # Controls when the action will run. 
+# on:
+#   # Triggers the workflow on push or pull request events but only for the main branch
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+#   # Allows you to run this workflow manually from the Actions tab
+#   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+# # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# jobs:
+#   # This workflow contains a single job called "build"
+#   build:
+#     # The type of runner that the job will run on
+#     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      - name: Unity - Activate
-      # You may pin to the exact commit or the version.
-      # uses: game-ci/unity-activate@cda570d7590fe63b7f718e6a052e170462c07361
-        uses: game-ci/unity-activate@v1.3
-        with:
-          # Version of unity to use for building the project.
-            unityVersion: 2019.2.11f1
+#     # Steps represent a sequence of tasks that will be executed as part of the job
+#     steps:
+#       - name: Unity - Activate
+#       # You may pin to the exact commit or the version.
+#       # uses: game-ci/unity-activate@cda570d7590fe63b7f718e6a052e170462c07361
+#         uses: game-ci/unity-activate@v1.3
+#         with:
+#           # Version of unity to use for building the project.
+#             unityVersion: 2019.2.11f1
